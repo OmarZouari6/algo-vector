@@ -1,0 +1,51 @@
+PROCEDURE dot_product(ps,V1,V2)
+VAR
+    ps=INTEGER;
+    V1,V2=ARRAY_OF INTEGER[3];
+    i=INTEGER;
+BEGIN
+    FOR i FROM 0 TO 2 DO
+        ps:= ps+v1[i]*v2[i];
+    END_FOR
+END
+ALGORITHM vecteur orthogonal
+VAR
+    V : ARRAY_OF ARRAY;
+    ps,i,j,n:INTEGER;
+BEGIN
+    n:=V.length-1;
+    FOR i FROM 0 TO n-2 STEP 1  DO
+        FOR j FROM i+1 TO n-1 STEP 1  DO
+            dot_product(V[i],V[j],ps)
+            IF (ps = 0) THEN
+                Write(V[i],",",V[j],"sont orthogonal")
+            END_IF
+        END_FOR
+    END_FOR
+END
+FUNCTION dot_product(v1,v2,ps)
+VAR
+    ps=INTEGER;
+    V1,V2=ARRAY_OF INTEGER[3];
+    i=INTEGER;
+BEGIN
+    FOR i FROM 0 TO 2 STEP 1  DO
+        ps:=ps+v1[i]*v2[i]
+    END_FOR
+    RETURN ps ;
+END
+ALGORITHM vecteur orthogonal
+VAR
+    V : ARRAY_OF ARRAY;
+    ps,i,j,n:INTEGER;
+BEGIN
+    n:=V.length-1;
+    FOR i FROM 0 TO n-2 STEP 1  DO
+        FOR j FROM i+1 TO n-1 STEP 1  DO
+            dot_product(V[i],V[j],ps)
+            IF (ps = 0) THEN
+                Write(V[i],",",V[j],"sont orthogonal")
+            END_IF
+        END_FOR
+    END_FOR
+END
